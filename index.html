@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nadir Hussain | SEO Expert</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --bg: #0a0a0f;
+      --bg2: #111118;
+      --card: #15151f;
+      --accent: #00d4aa;
+      --accent2: #7c5cfc;
+      --gold: #f0c040;
+      --text: #e8e8f0;
+      --muted: #888899;
+      --border: rgba(255,255,255,0.07);
+      --glow: 0 0 40px rgba(0,212,170,0.15);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.2rem 6%;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 900;
+      color: var(--accent);
+      letter-spacing: -0.5px;
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.9rem; font-weight: 500; letter-spacing: 0.5px;
+      text-transform: uppercase;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover { color: var(--accent); }
+
+    /* ─── HERO ─── */
+    #home {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      padding: 8rem 6% 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 70% 50%, rgba(124,92,252,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 10% 60%, rgba(0,212,170,0.08) 0%, transparent 60%);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+      max-width: 1200px; margin: 0 auto;
+      position: relative; z-index: 1;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: rgba(0,212,170,0.1);
+      border: 1px solid rgba(0,212,170,0.3);
+      border-radius: 100px;
+      padding: 0.35rem 1rem;
+      font-size: 0.8rem; color: var(--accent);
+      letter-spacing: 1px; text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      font-weight: 900; line-height: 1.05;
+      color: #fff;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+    .hero-name span { color: var(--accent); }
+    .hero-tagline {
+      font-size: 1.05rem; color: var(--muted);
+      margin: 1.2rem 0 2rem;
+      line-height: 1.7;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+    .hero-btns {
+      display: flex; gap: 1rem; flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+    .btn-primary {
+      background: var(--accent); color: #0a0a0f;
+      border: none; border-radius: 8px;
+      padding: 0.85rem 2rem;
+      font-weight: 700; font-size: 0.95rem;
+      cursor: pointer; text-decoration: none;
+      transition: all 0.3s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,212,170,0.35); }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+      border-radius: 8px;
+      padding: 0.85rem 2rem;
+      font-weight: 500; font-size: 0.95rem;
+      cursor: pointer; text-decoration: none;
+      transition: all 0.3s;
+      display: inline-flex; align-items: center; gap: 0.5rem;
+    }
+    .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+    .hero-visual {
+      display: flex; justify-content: center; align-items: center;
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+    .hero-img-wrap {
+      position: relative; width: 320px; height: 380px;
+    }
+    .hero-img-wrap::before {
+      content: '';
+      position: absolute; inset: -2px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 24px;
+      z-index: 0;
+    }
+    .hero-img-inner {
+      position: absolute; inset: 3px;
+      background: var(--card);
+      border-radius: 22px;
+      overflow: hidden;
+      z-index: 1;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-img-inner img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .hero-img-inner .avatar-placeholder {
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 6rem; color: rgba(0,212,170,0.3);
+    }
+    .stat-bubble {
+      position: absolute; z-index: 2;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.8rem 1.2rem;
+      backdrop-filter: blur(8px);
+      box-shadow: var(--glow);
+    }
+    .stat-bubble.s1 { bottom: -1rem; left: -2rem; }
+    .stat-bubble.s2 { top: 1rem; right: -2.5rem; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; color: var(--accent); }
+    .stat-lbl { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* ─── SECTION BASE ─── */
+    section { padding: 6rem 6%; }
+    .section-tag {
+      display: inline-block;
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.7rem;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900; color: #fff;
+      line-height: 1.1;
+    }
+    .section-title span { color: var(--accent); }
+    .section-sub { color: var(--muted); margin-top: 0.8rem; max-width: 550px; line-height: 1.7; }
+    .section-head { margin-bottom: 3.5rem; }
+
+    /* ─── ABOUT ─── */
+    #about { background: var(--bg2); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.3fr;
+      gap: 5rem; align-items: center;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .about-img-wrap {
+      position: relative; border-radius: 20px; overflow: hidden;
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .about-img-wrap .ph { font-size: 8rem; color: rgba(0,212,170,0.2); }
+    .about-img-wrap::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 40%;
+      background: linear-gradient(transparent, var(--bg2));
+    }
+    .about-info p {
+      color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem;
+    }
+    .about-stats {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1rem; margin: 2rem 0;
+    }
+    .astat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem;
+      text-align: center;
+    }
+    .astat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem; font-weight: 900; color: var(--accent);
+    }
+    .astat-lbl { font-size: 0.78rem; color: var(--muted); margin-top: 0.2rem; }
+
+    /* ─── SKILLS ─── */
+    #skills { background: var(--bg); }
+    .skills-content { max-width: 1200px; margin: 0 auto; }
+    .skill-cats {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    .skill-cat {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem;
+    }
+    .skill-cat-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 700; color: #fff;
+      margin-bottom: 0.3rem;
+    }
+    .skill-cat-years { font-size: 0.8rem; color: var(--accent); margin-bottom: 1.5rem; }
+    .skill-bar-wrap { margin-bottom: 1.2rem; }
+    .skill-bar-head {
+      display: flex; justify-content: space-between;
+      font-size: 0.88rem; margin-bottom: 0.4rem;
+    }
+    .skill-bar-track {
+      height: 6px; background: rgba(255,255,255,0.06);
+      border-radius: 100px; overflow: hidden;
+    }
+    .skill-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      border-radius: 100px;
+      transition: width 1.5s cubic-bezier(.23,1,.32,1);
+    }
+
+    /* ─── QUALIFICATION ─── */
+    #qualification { background: var(--bg2); }
+    .qual-content { max-width: 1000px; margin: 0 auto; }
+    .qual-tabs {
+      display: flex; gap: 1rem; margin-bottom: 3rem;
+    }
+    .qtab {
+      padding: 0.6rem 1.5rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted); cursor: pointer;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem; font-weight: 500;
+      transition: all 0.3s;
+    }
+    .qtab.active {
+      background: var(--accent); color: #0a0a0f;
+      border-color: var(--accent); font-weight: 700;
+    }
+    .qual-panel { display: none; }
+    .qual-panel.active { display: block; }
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 0; top: 0; bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2));
+      border-radius: 2px;
+    }
+    .titem {
+      position: relative; margin-bottom: 2rem;
+      padding-left: 1.5rem;
+    }
+    .titem::before {
+      content: '';
+      position: absolute; left: -2.35rem; top: 0.35rem;
+      width: 12px; height: 12px;
+      background: var(--accent);
+      border-radius: 50%;
+      border: 2px solid var(--bg2);
+      box-shadow: 0 0 0 3px rgba(0,212,170,0.2);
+    }
+    .titem-role {
+      font-size: 1rem; font-weight: 600; color: #fff;
+    }
+    .titem-org { font-size: 0.85rem; color: var(--accent); margin: 0.2rem 0; }
+    .titem-year { font-size: 0.8rem; color: var(--muted); }
+
+    /* ─── SERVICES ─── */
+    #services { background: var(--bg); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; max-width: 1200px; margin: 0 auto;
+    }
+    .scard {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem;
+      transition: all 0.35s;
+      cursor: pointer;
+    }
+    .scard:hover {
+      border-color: rgba(0,212,170,0.4);
+      transform: translateY(-4px);
+      box-shadow: var(--glow);
+    }
+    .scard-icon {
+      width: 52px; height: 52px;
+      background: rgba(0,212,170,0.1);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; color: var(--accent);
+      margin-bottom: 1.2rem;
+    }
+    .scard-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; font-weight: 700; color: #fff;
+      margin-bottom: 0.8rem;
+    }
+    .scard ul { list-style: none; }
+    .scard ul li {
+      font-size: 0.85rem; color: var(--muted);
+      padding: 0.3rem 0;
+      display: flex; align-items: flex-start; gap: 0.5rem;
+    }
+    .scard ul li::before {
+      content: '▸'; color: var(--accent); font-size: 0.7rem; margin-top: 2px;
+    }
+
+    /* ─── PORTFOLIO ─── */
+    #portfolio { background: var(--bg2); }
+    .port-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; max-width: 1200px; margin: 0 auto;
+    }
+    .pcard {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden;
+      transition: all 0.35s;
+    }
+    .pcard:hover { transform: translateY(-4px); box-shadow: var(--glow); }
+    .pcard-img {
+      height: 180px;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; color: rgba(0,212,170,0.3);
+      position: relative; overflow: hidden;
+    }
+    .pcard-img::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(21,21,31,0.9));
+    }
+    .pcard-body { padding: 1.5rem; }
+    .pcard-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem;
+    }
+    .pcard-desc { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+
+    /* ─── STATS STRIP ─── */
+    .stats-strip {
+      background: linear-gradient(135deg, var(--accent2), #3a1a80);
+      padding: 4rem 6%;
+    }
+    .stats-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 2rem; text-align: center;
+    }
+    .snum {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem; font-weight: 900; color: #fff;
+    }
+    .slbl { font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials { background: var(--bg); padding: 6rem 6%; }
+    .testi-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; max-width: 1200px; margin: 0 auto;
+    }
+    .tcard {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px; padding: 2rem;
+    }
+    .tcard-quote {
+      font-size: 2rem; color: var(--accent);
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+    }
+    .tcard-text { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
+    .tcard-author { display: flex; align-items: center; gap: 0.8rem; }
+    .tcard-av {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; color: #fff; font-weight: 700;
+    }
+    .tcard-name { font-weight: 600; color: #fff; font-size: 0.9rem; }
+    .tcard-role { font-size: 0.78rem; color: var(--muted); }
+
+    /* ─── CONTACT ─── */
+    #contact { background: var(--bg2); }
+    .contact-wrap {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.2fr;
+      gap: 5rem; align-items: start;
+    }
+    .contact-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem; font-weight: 700; color: #fff;
+      margin-bottom: 1rem;
+    }
+    .contact-info p { color: var(--muted); line-height: 1.7; margin-bottom: 2rem; }
+    .cinfo-item {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .cinfo-icon {
+      width: 44px; height: 44px; border-radius: 10px;
+      background: rgba(0,212,170,0.1);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .cinfo-label { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .cinfo-val { font-size: 0.95rem; color: #fff; font-weight: 500; }
+    .cinfo-val a { color: #fff; text-decoration: none; }
+    .cinfo-val a:hover { color: var(--accent); }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-field {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.9rem 1.2rem;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      outline: none; width: 100%;
+      transition: border-color 0.3s;
+    }
+    .form-field:focus { border-color: var(--accent); }
+    .form-field::placeholder { color: var(--muted); }
+    textarea.form-field { resize: vertical; min-height: 130px; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 2rem 6%;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-copy { font-size: 0.82rem; color: var(--muted); }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.82rem; text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: color 0.3s;
+    }
+    .footer-links a:hover { color: var(--accent); }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .hero-grid, .about-grid, .contact-wrap { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .skill-cats, .services-grid, .port-grid, .testi-grid { grid-template-columns: 1fr; }
+      .stats-inner { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .about-stats { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#home">Nadir.</a>
+  <ul class="nav-links">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-eyebrow"><i class="fas fa-circle-check"></i> Available for Work</div>
+      <h1 class="hero-name">Hi, I'm<br><span>Nadir Hussain</span></h1>
+      <p class="hero-tagline">
+        High-level experience in Search Engine Optimization,
+        digital marketing strategies, and web development —
+        delivering results that drive growth.
+      </p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Contact Me</a>
+        <a href="#about" class="btn-outline"><i class="fas fa-user"></i> About Me</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-wrap">
+        <div class="hero-img-inner">
+          <div class="avatar-placeholder"><i class="fas fa-user"></i></div>
+        </div>
+        <div class="stat-bubble s1">
+          <div class="stat-num">3+</div>
+          <div class="stat-lbl">Years Exp.</div>
+        </div>
+        <div class="stat-bubble s2">
+          <div class="stat-num">50+</div>
+          <div class="stat-lbl">Projects</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-img-wrap">
+      <div class="ph"><i class="fas fa-user-tie"></i></div>
+    </div>
+    <div class="about-info">
+      <p class="section-tag">About Me</p>
+      <h2 class="section-title">SEO Expert &<br><span>Digital Marketer</span></h2>
+      <p style="margin-top:1rem;">
+        Based in Islamabad, Pakistan — I am a passionate SEO expert and digital marketer
+        with extensive knowledge and years of experience in search engine optimization,
+        keyword research, technical audits, and content strategy.
+      </p>
+      <p>
+        I help businesses grow their online presence and achieve top rankings on Google
+        through data-driven strategies and proven methodologies.
+      </p>
+      <div class="about-stats">
+        <div class="astat">
+          <div class="astat-num">3+</div>
+          <div class="astat-lbl">Years Experience</div>
+        </div>
+        <div class="astat">
+          <div class="astat-num">50+</div>
+          <div class="astat-lbl">Projects Completed</div>
+        </div>
+        <div class="astat">
+          <div class="astat-num">10+</div>
+          <div class="astat-lbl">Companies Worked</div>
+        </div>
+      </div>
+      <a href="#" class="btn-primary"><i class="fas fa-download"></i> Download CV</a>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="skills-content">
+    <div class="section-head">
+      <p class="section-tag">My Expertise</p>
+      <h2 class="section-title">Technical <span>Skills</span></h2>
+      <p class="section-sub">A breakdown of my technical capabilities and proficiency levels across different domains.</p>
+    </div>
+    <div class="skill-cats">
+      <div class="skill-cat">
+        <h3 class="skill-cat-title">SEO Optimization</h3>
+        <p class="skill-cat-years">More than 3 years</p>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>On-Page SEO</span><span>90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Off-Page SEO</span><span>85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Technical SEO</span><span>80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Keyword Research</span><span>90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div></div>
+      </div>
+      <div class="skill-cat">
+        <h3 class="skill-cat-title">Digital Marketing</h3>
+        <p class="skill-cat-years">More than 2 years</p>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Google Analytics</span><span>85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Google Ads</span><span>75%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:75%"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Social Media Marketing</span><span>80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Content Strategy</span><span>85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+      </div>
+      <div class="skill-cat">
+        <h3 class="skill-cat-title">SEO Tools</h3>
+        <p class="skill-cat-years">Tools I Master</p>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Ahrefs / SEMrush</span><span>90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Google Search Console</span><span>95%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:95%"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Screaming Frog</span><span>80%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:80%"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Moz / Yoast SEO</span><span>85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+      </div>
+      <div class="skill-cat">
+        <h3 class="skill-cat-title">Web Development</h3>
+        <p class="skill-cat-years">Supporting Skills</p>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>HTML / CSS</span><span>85%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>JavaScript</span><span>70%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:70%"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>WordPress</span><span>90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:90%"></div></div></div>
+        <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Shopify</span><span>75%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" style="width:75%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFICATION -->
+<section id="qualification">
+  <div class="qual-content">
+    <div class="section-head">
+      <p class="section-tag">My Journey</p>
+      <h2 class="section-title">Qualification &<br><span>Experience</span></h2>
+    </div>
+    <div class="qual-tabs">
+      <button class="qtab active" onclick="switchTab('edu', this)"><i class="fas fa-graduation-cap"></i> Education</button>
+      <button class="qtab" onclick="switchTab('work', this)"><i class="fas fa-briefcase"></i> Work</button>
+    </div>
+    <div id="edu" class="qual-panel active">
+      <div class="timeline">
+        <div class="titem">
+          <div class="titem-role">SEO Certification</div>
+          <div class="titem-org">Google — Digital Garage</div>
+          <div class="titem-year">2022 – 2023</div>
+        </div>
+        <div class="titem">
+          <div class="titem-role">Digital Marketing</div>
+          <div class="titem-org">HubSpot Academy</div>
+          <div class="titem-year">2023 – 2024</div>
+        </div>
+        <div class="titem">
+          <div class="titem-role">Web Development</div>
+          <div class="titem-org">Self Taught</div>
+          <div class="titem-year">2021 – Present</div>
+        </div>
+      </div>
+    </div>
+    <div id="work" class="qual-panel">
+      <div class="timeline">
+        <div class="titem">
+          <div class="titem-role">Freelance SEO Expert</div>
+          <div class="titem-org">Fiverr / Upwork</div>
+          <div class="titem-year">2023 – Present</div>
+        </div>
+        <div class="titem">
+          <div class="titem-role">Digital Marketer</div>
+          <div class="titem-org">Remote Agency</div>
+          <div class="titem-year">2022 – 2023</div>
+        </div>
+        <div class="titem">
+          <div class="titem-role">SEO Intern</div>
+          <div class="titem-org">Islamabad Startup</div>
+          <div class="titem-year">2021 – 2022</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-head">
+      <p class="section-tag">What I Offer</p>
+      <h2 class="section-title">My <span>Services</span></h2>
+    </div>
+    <div class="services-grid">
+      <div class="scard">
+        <div class="scard-icon"><i class="fas fa-search"></i></div>
+        <h3 class="scard-title">SEO Optimization</h3>
+        <ul>
+          <li>Complete website SEO audit</li>
+          <li>On-page optimization & meta tags</li>
+          <li>Advanced keyword research & mapping</li>
+          <li>Technical SEO fixes & improvements</li>
+        </ul>
+      </div>
+      <div class="scard">
+        <div class="scard-icon"><i class="fas fa-link"></i></div>
+        <h3 class="scard-title">Link Building</h3>
+        <ul>
+          <li>High quality backlink acquisition</li>
+          <li>Guest posting & outreach campaigns</li>
+          <li>Competitor backlink analysis</li>
+          <li>Toxic link removal & disavow</li>
+        </ul>
+      </div>
+      <div class="scard">
+        <div class="scard-icon"><i class="fas fa-bullhorn"></i></div>
+        <h3 class="scard-title">Digital Marketing</h3>
+        <ul>
+          <li>Google Ads & PPC management</li>
+          <li>Social media marketing strategy</li>
+          <li>Content marketing & copywriting</li>
+          <li>Analytics setup & reporting</li>
+        </ul>
+      </div>
+      <div class="scard">
+        <div class="scard-icon"><i class="fas fa-pen-nib"></i></div>
+        <h3 class="scard-title">Content Strategy</h3>
+        <ul>
+          <li>SEO-optimized content creation</li>
+          <li>Blog post writing & optimization</li>
+          <li>Content calendar planning</li>
+          <li>Competitor content gap analysis</li>
+        </ul>
+      </div>
+      <div class="scard">
+        <div class="scard-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <h3 class="scard-title">Local SEO</h3>
+        <ul>
+          <li>Google My Business optimization</li>
+          <li>Local citation building</li>
+          <li>Review management strategy</li>
+          <li>Local keyword targeting</li>
+        </ul>
+      </div>
+      <div class="scard">
+        <div class="scard-icon"><i class="fas fa-bolt"></i></div>
+        <h3 class="scard-title">Site Speed Optimization</h3>
+        <ul>
+          <li>Core Web Vitals optimization</li>
+          <li>Image & asset compression</li>
+          <li>Caching & CDN configuration</li>
+          <li>Render-blocking resource fixes</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-head">
+      <p class="section-tag">Recent Work</p>
+      <h2 class="section-title">My <span>Portfolio</span></h2>
+    </div>
+    <div class="port-grid">
+      <div class="pcard">
+        <div class="pcard-img"><i class="fas fa-store"></i></div>
+        <div class="pcard-body">
+          <h3 class="pcard-title">E-Commerce SEO</h3>
+          <p class="pcard-desc">Complete SEO overhaul for an e-commerce store — achieved 200% increase in organic traffic within 6 months.</p>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img"><i class="fas fa-map-marked-alt"></i></div>
+        <div class="pcard-body">
+          <h3 class="pcard-title">Local SEO Campaign</h3>
+          <p class="pcard-desc">Local business SEO strategy including Google My Business optimization — ranked #1 for local keywords.</p>
+        </div>
+      </div>
+      <div class="pcard">
+        <div class="pcard-img"><i class="fas fa-chart-line"></i></div>
+        <div class="pcard-body">
+          <h3 class="pcard-title">Technical SEO Audit</h3>
+          <p class="pcard-desc">Full technical audit and fix for a SaaS website — improved Core Web Vitals score by 40%.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS STRIP -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div><div class="snum">150%</div><div class="slbl">Avg Traffic Increase</div></div>
+    <div><div class="snum">200+</div><div class="slbl">Keywords on Page 1</div></div>
+    <div><div class="snum">50+</div><div class="slbl">Happy Clients</div></div>
+    <div><div class="snum">4.9</div><div class="slbl">Client Satisfaction</div></div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-head">
+      <p class="section-tag">Client Reviews</p>
+      <h2 class="section-title">What Clients <span>Say</span></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="tcard">
+        <div class="tcard-quote">"</div>
+        <p class="tcard-text">Nadir did an excellent job with our website SEO. Our organic traffic increased by 150% and we now rank on the first page for all our target keywords. Highly recommended!</p>
+        <div class="tcard-author">
+          <div class="tcard-av">A</div>
+          <div><div class="tcard-name">Ahmed Khan</div><div class="tcard-role">Business Owner</div></div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-quote">"</div>
+        <p class="tcard-text">Outstanding work! Nadir provided a comprehensive SEO strategy that transformed our online presence. Professional, responsive, and delivers real results.</p>
+        <div class="tcard-author">
+          <div class="tcard-av">S</div>
+          <div><div class="tcard-name">Sara Malik</div><div class="tcard-role">Startup Founder</div></div>
+        </div>
+      </div>
+      <div class="tcard">
+        <div class="tcard-quote">"</div>
+        <p class="tcard-text">Nadir's technical SEO expertise is top-notch. He fixed critical issues on our site and our page load times improved significantly. A true professional!</p>
+        <div class="tcard-author">
+          <div class="tcard-av">U</div>
+          <div><div class="tcard-name">Usman Ali</div><div class="tcard-role">E-commerce Manager</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div style="max-width:1200px;margin:0 auto;">
+    <div class="section-head">
+      <p class="section-tag">Get In Touch</p>
+      <h2 class="section-title">Contact <span>Me</span></h2>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <h3>Let's work together</h3>
+        <p>Have a project in mind? Contact me now and get a free SEO consultation for your website.</p>
+        <div class="cinfo-item">
+          <div class="cinfo-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <div class="cinfo-label">Call / WhatsApp</div>
+            <div class="cinfo-val"><a href="tel:+923199462636">03199462636</a></div>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon"><i class="fas fa-envelope"></i></div>
+          <div>
+            <div class="cinfo-label">Email</div>
+            <div class="cinfo-val"><a href="mailto:nadirh1788@gmail.com">nadirh1788@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <div class="cinfo-label">Location</div>
+            <div class="cinfo-val">Islamabad, Pakistan</div>
+          </div>
+        </div>
+        <div class="cinfo-item">
+          <div class="cinfo-icon"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <div class="cinfo-label">WhatsApp</div>
+            <div class="cinfo-val"><a href="https://wa.me/923199462636" target="_blank">Chat on WhatsApp</a></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="contact-form">
+          <div class="form-row">
+            <input class="form-field" type="text" placeholder="Your Name"/>
+            <input class="form-field" type="email" placeholder="Your Email"/>
+          </div>
+          <input class="form-field" type="text" placeholder="Project Type"/>
+          <textarea class="form-field" placeholder="Your Message..."></textarea>
+          <a href="mailto:nadirh1788@gmail.com" class="btn-primary" style="justify-content:center;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-copy">© 2026 Nadir Hussain. All rights reserved.</p>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#portfolio">Portfolio</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  function switchTab(id, btn) {
+    document.querySelectorAll('.qual-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.qtab').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    btn.classList.add('active');
+  }
+
+  // Animate skill bars on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.skill-bar-fill').forEach(bar => {
+          bar.style.width = bar.style.width; // trigger reflow
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.skill-cat').forEach(el => observer.observe(el));
+
+  // Smooth active nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current
+        ? 'var(--accent)' : '';
+    });
+  });
+</script>
+</body>
+</html>
