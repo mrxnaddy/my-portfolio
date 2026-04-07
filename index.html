@@ -6,7 +6,7 @@
   <title>Nadir Hussain | SEO Expert</title>
   <title>Nadir Hussain | SEO Expert - Islamabad, Pakistan</title>
 <meta name="description" content="Nadir Hussain - Professional SEO Expert based in Islamabad, Pakistan. Specializing in On-Page SEO, Off-Page SEO, Technical SEO, and Digital Marketing strategies.">
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
 <meta property="og:title" content="Nadir Hussain | SEO Expert - Islamabad, Pakistan">
 <meta property="og:description" content="Nadir Hussain - Professional SEO Expert based in Islamabad, Pakistan. Specializing in On-Page SEO, Off-Page SEO, Technical SEO, and Digital Marketing strategies.">
 <meta property="og:type" content="website">
@@ -16,6 +16,98 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
+
+/* =========================================
+   SEO Case Study Section - Matching Theme
+   ========================================= */
+
+#project { 
+    padding: 80px 0; 
+    background-color: #0b0b0b; 
+}
+
+.case-study-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 40px;
+}
+
+.case-card {
+    background: transparent; 
+    border: 1px solid #222; 
+    border-radius: 15px;
+    padding: 30px;
+    display: grid;
+    /* Is se picture ka size purane code jaisa rahega */
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 30px;
+    transition: 0.3s ease;
+}
+
+.case-card:hover {
+    /* Orange ki jagah Green glow */
+    border-color: #00e676; 
+    background-color: rgba(0, 230, 118, 0.02); 
+}
+
+/* Matching Headings - Green */
+.case-info h3 {
+    color: #00e676; 
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* Matching Text - Muted Grey from your Hero section */
+.case-info p {
+    color: #888; 
+    line-height: 1.6;
+}
+
+/* Images Section - Keeping your original structure */
+.case-images-scroll {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.case-img-main {
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #222;
+    background: #111;
+}
+
+.img-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 10px;
+}
+
+.case-img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: contain; 
+    border-radius: 5px;
+    border: 1px solid #1a1a1a;
+    background: #111;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.case-img:hover {
+    /* Hover par green border */
+    border-color: #00e676;
+    transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .case-card {
+        grid-template-columns: 1fr;
+    }
+}
+      
     :root {
       --bg: #0a0a0f;
       --bg2: #111118;
@@ -169,15 +261,87 @@
     .slbl { font-size: 0.82rem; color: rgba(255,255,255,0.5); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 1px; }
 
     /* TESTIMONIALS */
-    #testimonials { background: var(--bg); }
-    .testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1200px; margin: 0 auto; }
-    .tcard { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
-    .tcard-quote { font-size: 2.5rem; color: var(--accent); font-family: 'Playfair Display', serif; line-height: 1; margin-bottom: 1rem; }
-    .tcard-text { font-size: 0.9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
-    .tcard-author { display: flex; align-items: center; gap: 0.8rem; }
-    .tcard-av { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent2)); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: #fff; font-weight: 700; flex-shrink: 0; }
-    .tcard-name { font-weight: 600; color: #fff; font-size: 0.9rem; }
-    .tcard-role { font-size: 0.78rem; color: var(--muted); }
+   #testimonials { 
+    background: var(--bg); 
+    padding: 60px 0; /* Thori space add ki hai upar niche */
+}
+
+.testi-grid { 
+    display: grid; 
+    /* 3 ki jagah 2 columns kar diye takay 4 cards barabar lagein */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1.5rem; 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
+}
+
+.tcard { 
+    background: var(--card); 
+    border: 1px solid var(--border); 
+    border-radius: 16px; 
+    padding: 2rem; 
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover effect takay cards responsive lagein */
+.tcard:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.tcard-quote { 
+    font-size: 2.5rem; 
+    color: var(--accent); 
+    font-family: 'Playfair Display', serif; 
+    line-height: 1; 
+    margin-bottom: 1rem; 
+}
+
+.tcard-text { 
+    font-size: 0.9rem; 
+    color: var(--muted); 
+    line-height: 1.7; 
+    margin-bottom: 1.5rem; 
+}
+
+.tcard-author { 
+    display: flex; 
+    align-items: center; 
+    gap: 0.8rem; 
+}
+
+.tcard-av { 
+    width: 42px; 
+    height: 42px; 
+    border-radius: 50%; 
+    background: linear-gradient(135deg, var(--accent), var(--accent2)); 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 1rem; 
+    color: #fff; 
+    font-weight: 700; 
+    flex-shrink: 0; 
+}
+
+.tcard-name { 
+    font-weight: 600; 
+    color: #fff; 
+    font-size: 0.9rem; 
+}
+
+.tcard-role { 
+    font-size: 0.78rem; 
+    color: var(--muted); 
+}
+
+/* Mobile ke liye responsive settings */
+@media (max-width: 768px) {
+    .testi-grid { 
+        grid-template-columns: 1fr; /* Mobile par cards ek ke niche ek ayenge */
+    }
+}
 
     /* CONTACT */
     #contact { background: var(--bg2); }
@@ -270,6 +434,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#services">Services</a></li>
+    <li><a href="#project">CASE STUDIES</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -287,6 +452,7 @@
   <a href="#about" onclick="closeMenu()">About</a>
   <a href="#skills" onclick="closeMenu()">Skills</a>
   <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#project" onclick="closeMenu()">Case Studies</a>
   <a href="#portfolio" onclick="closeMenu()">Portfolio</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
@@ -385,6 +551,87 @@
         <div class="skill-bar-wrap"><div class="skill-bar-head"><span>WordPress</span><span>90%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div></div>
         <div class="skill-bar-wrap"><div class="skill-bar-head"><span>Shopify</span><span>75%</span></div><div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SEO Case Study -->
+<section id="project" class="section">
+  <div class="container">
+    
+    <div class="section-head reveal" style="text-align: center; max-width: 600px; margin: 0 auto 50px auto;">
+      <p class="section-tag" style="color: #00e676; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px;">Proof of Work</p>
+      <h2 class="section-title" style="font-size: 2.5rem; margin: 10px 0;">SEO <span>Case Study</span></h2>
+      <p class="section-sub" style="color: #ccc; font-size: 1rem; line-height: 1.6;">Real Google Search Console results showing organic growth and ranking improvements for RJ Auto Recovery (UK).</p>
+    </div>
+
+    <div class="case-study-grid">
+      
+      <div class="case-card reveal">
+        <div class="case-info">
+          <h3>Organic Traffic Growth</h3>
+          <p>Achieved 119% growth in organic clicks within 3 months.</p>
+          <ul class="case-stats">
+            <li><span>Growth:</span> 119%</li>
+            <li><span>Timeline:</span> 90 Days</li>
+          </ul>
+        </div>
+        <div class="case-images">
+          <a href="crt.jpg" class="glightbox" data-gallery="gallery1">
+            <img src="crt.jpg" alt="Traffic Growth" class="case-img-main">
+          </a>
+          <div class="img-mini-grid">
+            <a href="2.jpg" class="glightbox" data-gallery="gallery1"><img src="2.jpg" alt="2" class="case-img"></a>
+            <a href="3.jpg" class="glightbox" data-gallery="gallery1"><img src="3.jpg" alt="3" class="case-img"></a>
+            <a href="4.jpg" class="glightbox" data-gallery="gallery1"><img src="4.jpg" alt="4" class="case-img"></a>
+            <a href="5.jpg" class="glightbox" data-gallery="gallery1"><img src="5.jpg" alt="5" class="case-img"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-info">
+          <h3>Ranking & Visibility</h3>
+          <p>Improved average search position from 14.6 to 9.8. Secured Top 3 rankings for high-intent keywords.</p>
+          <ul class="case-stats">
+            <li><span>Avg Position:</span> 9.8</li>
+            <li><span>Keywords:</span> Towing Truck, Recovery</li>
+          </ul>
+        </div>
+        <div class="case-images">
+          <a href="position.jpg" class="glightbox" data-gallery="gallery2">
+            <img src="position.jpg" alt="Average Position" class="case-img-main">
+          </a>
+          <div class="img-mini-grid">
+            <a href="6.jpg" class="glightbox" data-gallery="gallery2"><img src="6.jpg" alt="7" class="case-img"></a>
+            <a href="7.jpg" class="glightbox" data-gallery="gallery2"><img src="7.jpg" alt="7" class="case-img"></a>
+            <a href="8.jpg" class="glightbox" data-gallery="gallery2"><img src="8.jpg" alt="8" class="case-img"></a>
+            <a href="9.jpg" class="glightbox" data-gallery="gallery2"><img src="9.jpg" alt="9" class="case-img"></a>
+            <a href="10.jpg" class="glightbox" data-gallery="gallery2"><img src="10.jpg" alt="10" class="case-img"></a>
+            <a href="11.jpg" class="glightbox" data-gallery="gallery2"><img src="11.jpg" alt="11" class="case-img"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card reveal">
+        <div class="case-info">
+          <h3>Technical Excellence</h3>
+          <p>Ensured 100% technical site health with 118 pages indexed flawlessly.</p>
+          <ul class="case-stats">
+            <li><span>Indexed:</span> 118</li>
+            <li><span>Mobile Pos:</span> 7.4</li>
+          </ul>
+        </div>
+        <div class="case-images technical-grid">
+          <a href="index.jpg" class="glightbox" data-gallery="gallery3">
+            <img src="index.jpg" alt="Pages Indexed" class="case-img">
+          </a>
+          <a href="mobile.jpg" class="glightbox" data-gallery="gallery3">
+            <img src="mobile.jpg" alt="Mobile Performance" class="case-img">
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -523,25 +770,34 @@
 <!-- TESTIMONIALS -->
 <section id="testimonials">
   <div style="max-width:1200px;margin:0 auto;">
-    <div class="section-head reveal">
+    <div class="section-head reveal" style="text-align: center; margin-bottom: 50px;">
       <p class="section-tag">Client Reviews</p>
       <h2 class="section-title">What Clients <span>Say</span></h2>
     </div>
+    
     <div class="testi-grid">
       <div class="tcard reveal">
         <div class="tcard-quote">"</div>
         <p class="tcard-text">Nadir did an excellent job with our website SEO. Our organic traffic increased by 150% and we now rank on the first page for all our target keywords. Highly recommended!</p>
         <div class="tcard-author"><div class="tcard-av">A</div><div><div class="tcard-name">Ahmed Khan</div><div class="tcard-role">Business Owner</div></div></div>
       </div>
+
       <div class="tcard reveal">
         <div class="tcard-quote">"</div>
         <p class="tcard-text">Outstanding work! Nadir provided a comprehensive SEO strategy that transformed our online presence. Professional, responsive, and delivers real results.</p>
         <div class="tcard-author"><div class="tcard-av">S</div><div><div class="tcard-name">Sara Malik</div><div class="tcard-role">Startup Founder</div></div></div>
       </div>
+
       <div class="tcard reveal">
         <div class="tcard-quote">"</div>
         <p class="tcard-text">Nadir's technical SEO expertise is top-notch. He fixed critical issues on our site and our page load times improved significantly. A true professional!</p>
         <div class="tcard-author"><div class="tcard-av">U</div><div><div class="tcard-name">Usman Ali</div><div class="tcard-role">E-commerce Manager</div></div></div>
+      </div>
+
+      <div class="tcard reveal">
+        <div class="tcard-quote">"</div>
+        <p class="tcard-text">Nadir helped us dominate the local recovery market in the UK. Our calls increased significantly after the ranking improvements.</p>
+        <div class="tcard-author"><div class="tcard-av" style="background: #00e676; color: #000;">M</div><div><div class="tcard-name">Manager</div><div class="tcard-role">RJ Auto Recovery (UK)</div></div></div>
       </div>
     </div>
   </div>
@@ -707,6 +963,17 @@
       const mailto = `mailto:nadirh1788@gmail.com?subject=Project Inquiry from ${encodeURIComponent(name)}&body=Name: ${encodeURIComponent(name)}%0AEmail: ${encodeURIComponent(email)}%0AProject: ${encodeURIComponent(project)}%0A%0AMessage:%0A${encodeURIComponent(msg)}`;
       window.location.href = mailto;
     } else { alert('Please fill in Name, Email, and Message.'); }
+  });
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+<script type="text/javascript">
+  // Ye line images ko clickable banati hai
+  const lightbox = GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    zoomable: true
   });
 </script>
 </body>
